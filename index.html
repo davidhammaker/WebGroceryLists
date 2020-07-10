@@ -10,37 +10,22 @@
             #header {
                 text-align: center;
             }
-            #welcome {
-                margin: auto;
-                width: 50%;
-                text-align: center;
-            }
-            #loginBox { /*Create a box for the login info*/
-                position: absolute;
-                Width: 15%;
-                top: 80px;
-                right: 20px;
-                border: thin solid blue;
-                text-align: center;
-            }
-            .smallBox { /* Put a small box around the username and password */
-                border: thin solid black;
-                margin: 10px;
-                text-align: left;
-                overflow: hidden;
+            #walmart {
+                position: relative;
+                left: 20px;
             }
         </style>
     </head>
     <body>
         <h1 id="header">WebGroceryLists</h1>
-        <div id="welcome"> <!--Create some kind of welcome to the page, explain what it is and how to use it-->
-            <p>Welcome to this page. There's not much happening here yet, but check back soon as we have big plans for this page! </p>
-            <p>To use this page, a user should sign up/log in on the right hand side. Then, they should be able to view the lists that they are a part of and create/manage lists.</p>
-        </div>
-        <div id="loginBox">
-            <h2>Login</h2>
-            <div><p class="smallBox">Username</p></div>
-            <div><p class="smallBox">Password</p></div>
-        </div>
+        <div id="walmart">
+            <h2>Walmart List</h2>
+            <ul>
+                <li>Milk</li>
+                <li>Eggs</li>
+                <li>Ice Cream</li>
+                <li>Yogurt</li>
+            </ul>
+        </div>  
     </body>
 </html>
