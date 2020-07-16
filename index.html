@@ -20,12 +20,26 @@
         <h1 id="header">WebGroceryLists</h1>
         <div id="walmart">
             <h2>Walmart List</h2>
-            <ul>
+            <button id='newItem'>Add New Item</button>
+            <label>Item <input id='addedItem'></label>
+            <ul id='listItems'>
                 <li>Milk</li>
                 <li>Eggs</li>
                 <li>Ice Cream</li>
                 <li>Yogurt</li>
             </ul>
         </div>  
+    <script>
+        var newItemEl = document.getElementById('newItem');
+        var addNewItemClick = function () {
+          var newListItem = document.getElementById('addedItem').value;
+          var newBulletPoint = document.createElement('li');
+          var newBulletPointText = document.createTextNode(newListItem);
+          newBulletPoint.appendChild(newBulletPointText);
+          listItems.appendChild(newBulletPoint);
+          document.getElementById('addedItem').value = '';
+        }
+        newItemEl.addEventListener('click',addNewItemClick);
+    </script>
     </body>
 </html>
