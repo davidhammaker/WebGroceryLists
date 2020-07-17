@@ -20,22 +20,25 @@
         <h1 id="header">WebGroceryLists</h1>
         <div id="walmart">
             <h2>Walmart List</h2>
+            <label for='addedItem'>Item</label>
+              <input id='addedItem'>
             <button id='newItem'>Add New Item</button>
-            <label>Item <input id='addedItem'></label>
-            <ul id='listItems'>
-                <li>Milk</li>
-                <li>Eggs</li>
-                <li>Ice Cream</li>
-                <li>Yogurt</li>
-            </ul>
+            <div id='listItems'>
+            </div>
         </div>  
     <script>
+        var itemCounter = 1;
         var newItemEl = document.getElementById('newItem');
         var addNewItemClick = function () {
           var newListItem = document.getElementById('addedItem').value;
-          var newBulletPoint = document.createElement('li');
+          var newBulletPoint = document.createElement('p');
+          var newBulletPointCheck = document.createElement('INPUT');
+          newBulletPointCheck.setAttribute('type', 'checkbox');
+          newBulletPoint.appendChild(newBulletPointCheck);
           var newBulletPointText = document.createTextNode(newListItem);
           newBulletPoint.appendChild(newBulletPointText);
+          newBulletPoint.setAttribute('id', itemCounter)
+          itemCounter++;
           listItems.appendChild(newBulletPoint);
           document.getElementById('addedItem').value = '';
         }
