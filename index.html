@@ -21,12 +21,19 @@
         <div id="walmart">
             <h2>Walmart List</h2>
             <label for='addedItem'>Item</label>
-              <input id='addedItem'>
+                <input id='addedItem'>
             <button id='newItem'>Add New Item</button>
             <div id='listItems'>
             </div>
         </div>  
     <script>
+        var submission = document.getElementById("addedItem");
+        addedItem.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("newItem").click();
+            }
+        });
         var itemCounter = 1;
         var newItemEl = document.getElementById('newItem');
         var addNewItemClick = function () {
@@ -40,6 +47,13 @@
           newBulletPoint.setAttribute('id', itemCounter)
           itemCounter++;
           listItems.appendChild(newBulletPoint);
+          newBulletPointCheck.addEventListener('click', function(event){
+              if (newBulletPointCheck.checked === true) {
+                newBulletPoint.style.textDecoration = "line-through";
+              } else {
+                newBulletPoint.style.textDecoration = ""
+              }
+          });
           document.getElementById('addedItem').value = '';
         }
         newItemEl.addEventListener('click',addNewItemClick);
