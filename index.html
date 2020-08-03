@@ -27,22 +27,22 @@
             </div>
         </div>  
     <script>
-        var submission = document.getElementById("addedItem");
+        let submission = document.getElementById("addedItem");
         addedItem.addEventListener("keyup", function(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
                 document.getElementById("newItem").click();
             }
         });
-        var itemCounter = 1;
-        var newItemEl = document.getElementById('newItem');
-        var addNewItemClick = function () {
-            var newListItem = document.getElementById('addedItem').value;
-            var newBulletPoint = document.createElement('p');
-            var newBulletPointCheck = document.createElement('INPUT');
+        let itemCounter = 1;
+        let newItemEl = document.getElementById('newItem');
+        let addNewItemClick = function () {
+            let newListItem = document.getElementById('addedItem').value;
+            let newBulletPoint = document.createElement('p');
+            let newBulletPointCheck = document.createElement('INPUT');
             newBulletPointCheck.setAttribute('type', 'checkbox');
             newBulletPoint.appendChild(newBulletPointCheck);
-            var newBulletPointText = document.createTextNode(newListItem);
+            let newBulletPointText = document.createTextNode(newListItem);
             newBulletPoint.appendChild(newBulletPointText);
             newBulletPoint.setAttribute('id', itemCounter)
             itemCounter++;
