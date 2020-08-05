@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+
+#header {
+  text-align: center;
+}
+
+#walmart {
+  position: relative;
+  left: 20px;
+}
+
