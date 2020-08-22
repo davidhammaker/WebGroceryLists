@@ -7,25 +7,50 @@ addedItem.addEventListener("keyup", function(event) {
 });
 let itemCounter = 1;
 let newItemEl = document.getElementById('newItem');
+
 let addNewItemClick = function () {
+    // Get the added item value
     let newListItem = document.getElementById('addedItem').value;
-    let newBulletPoint = document.createElement('p');
+
+    // Create a new div to hold everything
+    let newBulletPoint = document.createElement('div');
+
+    // Create a label to hold checkbox and item text
+    let newBulletPointLabel = document.createElement('label');
+    newBulletPointLabel.setAttribute('style', 'margin-bottom: 0');
+    newBulletPoint.appendChild(newBulletPointLabel);
+
+    // Create checkbox
     let newBulletPointCheck = document.createElement('INPUT');
     newBulletPointCheck.setAttribute('type', 'checkbox');
-    newBulletPoint.appendChild(newBulletPointCheck);
+    newBulletPointCheck.setAttribute('class', 'checkbox-custom');
+    newBulletPointLabel.appendChild(newBulletPointCheck);
+
+    // Create text
     let newBulletPointText = document.createTextNode(newListItem);
-    newBulletPoint.appendChild(newBulletPointText);
-    newBulletPoint.setAttribute('id', itemCounter)
+    newBulletPointLabel.appendChild(newBulletPointText);
+    
+    // Add ID and class to the new div
+    newBulletPoint.setAttribute('id', itemCounter);
+    newBulletPoint.setAttribute('class', 'checkbox p-2 list-item');
     itemCounter++;
+
+    // Add the new item to the list
+    let listItems = document.getElementById('listItems');
     listItems.appendChild(newBulletPoint);
+
+    // Give checkbox toggle functionality
     newBulletPointCheck.addEventListener('click', function(event){
         if (newBulletPointCheck.checked === true) {
-            newBulletPoint.style.textDecoration = "line-through";
+            newBulletPointLabel.style.textDecoration = "line-through";
         } else {
-            newBulletPoint.style.textDecoration = ""
+            newBulletPointLabel.style.textDecoration = ""
         }
     });
+
+    // Clear the input
     document.getElementById('addedItem').value = '';
 }
+
 newItemEl.addEventListener('click',addNewItemClick);
 
